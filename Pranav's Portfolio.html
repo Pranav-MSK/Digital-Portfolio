@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pranav's Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff; /* Light blue background */
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #003366; /* Dark Blue */
+            color: #fff;
+            text-align: center;
+            padding: 3rem 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .header-content h1 {
+            font-size: 3rem;
+            margin: 0.5rem 0;
+        }
+
+        .profile-picture {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            transition: transform 0.3s ease;
+            border: 4px solid #fff; /* White border */
+        }
+
+        .profile-picture:hover {
+            transform: scale(1.1);
+        }
+
+        nav {
+            background-color: #4caf50; /* Greenish Blue */
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ff5722; /* Bright accent color for hover */
+        }
+
+        .section-content {
+            background-color: #fff;
+            padding: 2rem;
+            margin: 1rem;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: justify;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .section-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .download-button {
+            background-color: #003366; /* Dark Blue */
+            color: #fff;
+            padding: 0.5rem 1.5rem;
+            text-decoration: none;
+            border-radius: 30px;
+            display: inline-block;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-button:hover {
+            background-color: #002244; /* Darker blue on hover */
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #003366; /* Dark Blue */
+            color: #fff;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .project-card {
+            background-color: #e3f2fd; /* Light Blue */
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            background-color: #c8e6c9; /* Light Green background on hover */
+        }
+
+        .project-card a {
+            text-decoration: none;
+            color: #003366;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .project-card a:hover {
+            color: #ff5722; /* Hover color for links */
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <img src="PRANAV_profile.jpg" alt="Your Profile Picture" class="profile-picture">
+            <h1>Pranav M S Krishnan</h1>
+            <p>Web Developer & Tech Enthusiast</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#resume">Resume</a></li>
+        </ul>
+    </nav>
+
+    <section id="about" class="section-content">
+        <h2>About Me</h2>
+        <p>I'm a passionate <b>web developer</b> with a strong focus on creating scalable, efficient, and user-friendly web applications. With a keen interest in <b>full-stack development</b> and emerging technologies, I strive to build innovative solutions that enhance user experience.</p>
+    </section>
+
+    <section id="education" class="section-content">
+        <h2>Education</h2>
+        <p>Bachelor's Degree in Computer Science</p>
+    </section>
+
+    <section id="skills" class="section-content">
+        <h2>Skills</h2>
+        <ul>
+            <li>Python</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Java</li>
+            <li>C++</li>
+            <li>JavaScript</li>
+        </ul>
+    </section>
+
+    <section id="projects" class="section-content">
+        <h2>Projects</h2>
+        <div class="project-card"><a href="#">Student Database Management System</a></div>
+        <div class="project-card"><a href="#">Portfolio Website</a></div>
+    </section>
+
+    <section id="resume" class="section-content">
+        <center>
+            <h2>Resume</h2>
+            <a href="Pranav M S Krishnan Resume.pdf" target="_blank" class="download-button">Download Resume</a>
+        </center>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Pranav</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling to section when clicking on navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 60,  // Adjust to offset header height
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Adding visibility to section content as it scrolls into view
+        const sections = document.querySelectorAll('.section-content');
+
+        const inView = () => {
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    section.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', inView);
+        inView();  // Check if sections are visible when the page loads
+    </script>
+</body>
+</html>
