@@ -13,7 +13,7 @@ A simple, clean, and responsive portfolio website designed to showcase my skills
 
 ## Live Demo
 
-Follow link it visit the website :- 🔗 Digital Portfolio [https://pranav-msk.github.io/Digital-Portfolio/]
+Follow link to visit the website :- 🔗 [Digital Portfolio](https://pranav-msk.github.io/Digital-Portfolio/)
 
 ---
 
